@@ -45,21 +45,3 @@ except the start room and villain room.
 
 Lord Voldemort also known as Tom Riddle, became a powerful dark wizard who wants to destroy all muggles (non-magic),
 muggle born witches and wizards and rule the world.
-
-## Storyboard and Map Check
-
-Before submitting, compare this storyboard with `game_map.drawio`.
-
-* [ ] I included eight (8) rooms.
-* [ ] I included six (6) collectable items.
-* [ ] The start room has no item.
-* [ ] The villain room has no item.
-* [ ] Every room except the start room and villain room contains one item.
-* [ ] Room, item, and villain names match my map.
-* [ ] The map allows the player to collect all required items before the
-  villain is encountered.
-
-## Project Two Handoff
-
-Keep this file after Project One. In Module Seven, use these names and design
-choices when building the final room/item dictionary and player-facing output.
