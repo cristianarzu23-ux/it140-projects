@@ -10,21 +10,34 @@
 START get_item
 
     # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+        - main_game_l = Great Hall
+        - room_x = hogwarts_castle 
+        - mag_item_x = horcrux_i 
+        - user_inventory = user_it_collected
 
     # TODO 2: Prompt for and receive the player's get-item command.
-
+        - output = "Get horcrux_item"
+        - input = user_command (get mag_itemx)
+        
     # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
+    # room.
+        - If mag_item_x = item_in_room then:
 
     # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
+        - output = "Congrats! you've acquired the, mag_item_x"
+        - add mag_item_x to user_bag
+        - remove mag_item_x from room_x
+        - output = "You have user_inventory in your user_bag!"
 
     # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
+    else:
+        - if mag_item != item_in_room then:
+        - output = "mag_item_x is not in this room_x"
+        - else
+        - output = "There are no items in this room."
 
     # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
+        - return to Great Hall
 
 END get_item
 
