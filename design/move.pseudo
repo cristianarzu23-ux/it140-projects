@@ -7,19 +7,40 @@
 # Write pseudocode, not Python code. Use clear indentation and course-appropriate
 # keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
 
-# TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+# TODO 1: 
+- Identify the information the movement process needs.
+* SET current_room = "The Great Hall"
+* SET player_move = ""
 
-# TODO 2: Prompt for and receive the player's movement command.
+# TODO 2:
+- output = "Enter a direction to move (North, South, East, West) or 'Exit':"
+  - input = player_move
+    - IF player_move IS "Exit":
+    - output = "Thank you for playing!"
+        Break/End Game
 
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
+# TODO 3: 
+- IF player_move = next_room (direction, movement_command, "North, South, East, West") 
+"is a valid direction from current_room"
 
-# TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
+# TODO 4:
+- current_room = next_room connected in that direction
+        output = "You successfully moved to " + room_x
 
-# TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+# TODO 5:
+else
+- output = "You cannot go that way! Try a different direction."
 
-# TODO 6: Show how movement fits into repeated gameplay.
-# The final game continues accepting commands until a required ending occurs.
+# TODO 6:
+while game_over != false
+  - current_room is not "The Chamber of Secrets" + player_move is not "end game":
+  - output = "You are currently in: " + current_room
+if horcrux_aqui = 6:
+  output = "Congradulations! You Win!" 
+            "You collected all the horcroxes and helped Harry defeat Lord Voldemort!"
+endif 
+IF current_room = The Chamber of Secrets:
+        output = "HAVARA KADABRA!"
+        output = "Lord Voldemort found you. You have been defeated."
+        SET game_over = Deafeated
+    endif
