@@ -2,21 +2,34 @@
 
 # A dictionary for the simplified dragon text game.
 # The dictionary links a room to other rooms.
+
 rooms = {
-    "Great Hall": {"south": "Bedroom"},
-    "Bedroom": {"north": "Great Hall", "east": "Cellar"},
-    "Cellar": {"west": "Bedroom"},
+    'Great Hall': {'South': 'Bedroom'},
+    'Bedroom': {'North': 'Great Hall', 'East': 'Cellar'},
+    'Cellar': {'West': 'Bedroom'}
 }
 
+current_room = "Great Hall"
 
-# TODO: Set the player's starting room for the simplified prototype.
+while True:
+    print(f"\nYou are in the {current_room}.")
 
-# TODO: Create the gameplay loop required by the milestone.
-# Within the loop, complete the required behavior in small steps:
-#   1. Display the current room.
-#   2. Prompt for a movement command or "exit".
-#   3. Branch for a valid move, exit, or invalid input.
-#   4. Update the room only after a valid movement command.
-#   5. Continue until the required exit condition is reached.
+    user_input = input("Enter your move: ").strip().split()
 
-# TODO: Run and debug all milestone cases in prototype/README.md.
+    if not user_input:
+        print("Please enter a move.")
+        continue
+    user_move = user_input[0].lower()
+    if user_move == "exit":
+        print("Thank you for playing!")
+        break
+    elif user_move == "go" and len(user_input) > 1:
+        direction = user_input[1].title()
+        if direction in rooms[current_room]:
+            current_room = rooms[current_room][direction]
+        else:
+            print("You cannot go {direction}!")
+    else:
+         print("Invalid input! Try 'go [Direction]' or 'exit'.")
+
+        
