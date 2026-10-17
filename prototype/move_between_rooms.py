@@ -23,6 +23,12 @@ while True:
     if user_move == "exit":
         print("Thank you for playing!")
         break
+        
+    if user_move == "go" and len(user_input) > 1:
+        direction = user_input[1].title()
+    elif
+        direction = user_input[0].title()
+        
     elif user_move == "go" and len(user_input) > 1:
         direction = user_input[1].title()
         if direction in rooms[current_room]:
